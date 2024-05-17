@@ -1,6 +1,4 @@
-// Basically a fake database
-
-
+// Basically creating a fake database
 //the movies we have in the streamsite
 let movies = [
     { name: "Kung Fu Panda", genre: 'Comedy', likes: 16 },

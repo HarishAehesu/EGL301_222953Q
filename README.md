@@ -1,13 +1,19 @@
 # Assignment 1 : MovieStreamingService
 
 ## Overview
-This Node.js module provides functionalities for managing and interacting with a movie streaming service. You can search for movies by name or genre, view a list of your favorite movies, like movies, view and edit user account details, and add new movies to the list. This README will guide you through setting up and using the module.
+This Node.js module provides functionalities for managing and interacting with a movie streaming service. You can search for movies by name or genre, view a list of your favorite movies, like movies, view and edit user account details,  add new movies to the list and view all movies. This README will guide you through setting up and using the module.
 
 
 ## Setting up
+1. If you don't already have Node.js, you can install it from https://nodejs.org/
+2. Save AehesuHarish_MovieStream.js to your project directory 
+3. Create a new file named app.js
+4. In app.js, import the module using <code>const movieModule = require('./AehesuHarish_Moviestream.js'); </code>
+5. To run the module, run <code>node app.js</code> in the terminal
 
 ## Usage
-### This is the code to test out
+### This is the code used to test out the MovieStreamingService
+
 ```
 
 const movieModule = require('./AehesuHarish_Moviestream.js'); 
@@ -146,4 +152,4 @@ Adds a new movie to the movies list.
 Adds an existing movie to the user's list by name.
 
 ###  10. viewmovies()
-Displays all movies the site has
+Displays all movies the site has.

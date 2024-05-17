@@ -1,4 +1,7 @@
-// Array of movie objects
+// Basically a fake database
+
+
+//the movies we have in the streamsite
 let movies = [
     { name: "Kung Fu Panda", genre: 'Comedy', likes: 16 },
     { name: "Demon Slayer", genre: 'Anime', likes: 15 },
@@ -6,7 +9,7 @@ let movies = [
     { name: "Godzilla", genre: 'Action', likes: 10 }
 ];
 
-// User account details
+// User account details(current user)
 let accountdetails = {
     Name: 'John',
     Email: 'John@gmail.com',
@@ -15,7 +18,7 @@ let accountdetails = {
 
 // Array of movies in the user's list
 let mylist = [
-  //empty as user can add movie later
+  //currently keeping it empty, can be added using functions
 ];
 
 // Exporting the module with various functions
@@ -38,7 +41,7 @@ module.exports = {
 
     // View movies in my list
     viewmylist() {
-        // Check if the list is empty and return appropriate message
+        // Check if the list is empty and return approp message
         if (mylist.length === 0) {
             return "your list is empty, try adding movies!";
         } else {
@@ -82,7 +85,7 @@ module.exports = {
     // Show most popular movie function
     showmostpopularmovie() {
         // Sort movies by the number of likes in descending order
-        let sortedMovies = [...movies].sort((a, b) => b.likes - a.likes);
+        let sortedMovies = [...movies].sort((a, b) => b.likes - a.likes);  // [...movies] uses the spread operator to create a new array with the same elements (Googled it)
         // Get the top 3 movies
         let top3Movies = sortedMovies.slice(0, 3);
         // Return the top 3 movies as a formatted string
@@ -116,7 +119,15 @@ module.exports = {
         // Return a message if the movie is not found
         return `Movie ${movieName} not found.`;
     }
-}
+},
+
+
+    // View movies in my list
+    viewmovies() {
+        
+            return movies;
+      
+    }
 
 
 };

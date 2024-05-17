@@ -21,7 +21,7 @@ console.log(movieModule.viewmylist());//should be emty
 
 // Test likemovie function
 console.log("===============");
-console.log("Function 3 - view like a movie by name");
+console.log("Function 3 - like a movie by name");
 console.log("===============");
 console.log("Like 'Kung Fu Panda':");
 console.log(movieModule.likemovie('Kung Fu Panda'));
@@ -64,11 +64,11 @@ console.log(movieModule.showmostpopularmovie());
 console.log("===============");
 console.log("Function 8 - add a movie");
 console.log("===============");
-const newMovie = { name: "New Movie", genre: 'Sci-Fi', likes: 0 };
+const newMovie = { name: "Awake", genre: 'Sci-Fi', likes: 0 };
 console.log("Add new movie:");
 console.log(movieModule.addmovie(newMovie));
-console.log("Search for 'New Movie':");
-console.log(movieModule.search('New Movie'));
+//search for it
+console.log(movieModule.search('Awake'));
 
 // Test addexistingmovietolist function
 // Test addmovie function
@@ -92,3 +92,10 @@ console.log(movieModule.addexistingmovietolist('Avatar')); //shall say movie not
 console.log("===============");
 console.log("View list to see last:"); //displays the list godzilla should be adddd also
 console.log(movieModule.viewmylist());
+
+// Test view all movies function
+console.log("===============");
+console.log("Function 10 - view all movies");
+console.log("===============");
+console.log("View all movies:");
+console.log(movieModule.viewmovies());

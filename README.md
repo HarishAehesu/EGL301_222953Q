@@ -9,6 +9,7 @@ This Node.js module provides functionalities for managing and interacting with a
 ## Usage
 ### This is the code to test out
 ```
+
 const movieModule = require('./AehesuHarish_Moviestream.js'); 
 
 
@@ -26,14 +27,14 @@ console.log(movieModule.search('Sci-Fi')); //should see no resulys found
 console.log("===============");
 console.log("Function 2 - view movies in list");
 console.log("===============");
-console.log("\nView my list:");
-console.log(movieModule.viewmylist());
+console.log("View my list:");
+console.log(movieModule.viewmylist());//should be emty
 
 // Test likemovie function
 console.log("===============");
 console.log("Function 3 - view like a movie by name");
 console.log("===============");
-console.log("\nLike 'Kung Fu Panda':");
+console.log("Like 'Kung Fu Panda':");
 console.log(movieModule.likemovie('Kung Fu Panda'));
 console.log("Like 'Godzilla':");
 console.log(movieModule.likemovie('Godzilla'));
@@ -44,15 +45,14 @@ console.log(movieModule.likemovie('Unknown Movie'));
 console.log("===============");
 console.log("Function 4 - account details");
 console.log("===============");
-console.log("\nView account details:");
+console.log("View current account details:");
 console.log(movieModule.viewaccdetails());
 
 // Test editusername function
 console.log("===============");
 console.log("Function 5 - change username");
 console.log("===============");
-console.log("\nEdit username to 'NewUsername':");
-console.log(movieModule.editusername('NewUsername'));
+console.log(movieModule.editusername('Tommy123'));
 console.log("View account details:");
 console.log(movieModule.viewaccdetails());
 
@@ -60,7 +60,7 @@ console.log(movieModule.viewaccdetails());
 console.log("===============");
 console.log("Function 6- change name");
 console.log("===============");
-console.log(movieModule.editname('NewName'));
+console.log(movieModule.editname('Thomas'));
 console.log("View account details:");
 console.log(movieModule.viewaccdetails());
 
@@ -68,7 +68,7 @@ console.log(movieModule.viewaccdetails());
 console.log("===============");
 console.log("Function 7 - view most popular movie");
 console.log("===============");
-console.log("\nShow most popular movies:");
+console.log("Show most popular movies:");
 console.log(movieModule.showmostpopularmovie());
 
 // Test addmovie function
@@ -76,57 +76,63 @@ console.log("===============");
 console.log("Function 8 - add a movie");
 console.log("===============");
 const newMovie = { name: "New Movie", genre: 'Sci-Fi', likes: 0 };
-console.log("\nAdd new movie:");
+console.log("Add new movie:");
 console.log(movieModule.addmovie(newMovie));
 console.log("Search for 'New Movie':");
 console.log(movieModule.search('New Movie'));
+
+// Test addexistingmovietolist function
+// Test addmovie function
+console.log("===============");
+console.log("Function 9 - add a movie to list");
+console.log("===============");
+console.log("Add existing movie 'Godzilla' to my list:");//shall work as we are addimg a movie that exists and also a movie not in list
+console.log(movieModule.addexistingmovietolist('Godzilla'));
+console.log("===============");
+
+console.log("Add existing movie 'Kung Fu Panda' to list:");//shall work
+console.log(movieModule.addexistingmovietolist('Kung Fu Panda'));
+console.log("===============");
+
+console.log("Add existing movie 'Godzilla' that alr exixsts in list:");//displays that the movie is alr added
+console.log(movieModule.addexistingmovietolist('Godzilla'));
+console.log("===============");
+
+console.log("Try to add non-existing movie 'Avatar' to my list:");
+console.log(movieModule.addexistingmovietolist('Avatar')); //shall say movie not found as its not a movie that exists
+console.log("===============");
+console.log("View list to see last:"); //displays the list godzilla should be adddd also
+console.log(movieModule.viewmylist());
 ```
 
 
 ## Functions
 
-### 1. Search for Movies:
-Function: search(query)<br />
-Description: Searches for movies by name or genre.<br />
-Parameters: query (string) - The search term.<br />
-Example: movieModule.search('Comedy')<br />
+###  1.search(query)
+Searches movies by name or genre.
 
-### 2. View My List:
-Function: viewmylist()<br />
-Description: Returns the list of movies in the user's list.<br />
-Example: movieModule.viewmylist()<br />
+###  2. viewmylist()
+Displays movies in the user's list.
 
-### 3. Like a Movie:
-Function: likemovie(movieName)<br />
-Description: Increments the like count for the specified movie.<br />
-Parameters: movieName (string) - The name of the movie to like.<br />
-Example: movieModule.likemovie('Kung Fu Panda')<br />
-
-### 4. View Account Details:
-Function: viewaccdetails()<br />
-Description: Returns the user's account details.<br />
-Example: movieModule.viewaccdetails()<br />
+###  3.likemovie(movieName)
+Likes a movie by its name.
 
 
-### 5. Edit username
-Function: editusername(newUsername)<br />
-Description: Updates the username in the user's account details.<br />
-Parameters: newUsername (string) - The new username.<br />
-Example: movieModule.editusername('NewUsername')<br />
+###  4.viewaccdetails()
+Shows user account details.
 
-### 6. Edit Name:
-Function: editname(newName)<br />
-Description: Updates the name in the user's account details.<br />
-Parameters: newName (string) - The new name.<br />
-Example: movieModule.editname('NewName')<br />
+###  5.editusername(newUsername)
+Updates the user's username.
 
-### 7. Show Most Popular Movies:
-Function: showmostpopularmovie()<br />
-Description: Returns the top 3 movies sorted by the number of likes.<br />
-Example: movieModule.showmostpopularmovie()<br />
+###  6.editname(newName)
+Updates the user's name.
 
-### 8. Add Movie:
-Function: addmovie(newMovie)<br />
-Description: Adds a new movie to the list of movies.<br />
-Parameters: newMovie (object) - The new movie object with name, genre, and likes properties.<br />
-Example: movieModule.addmovie({ name: "New Movie", genre: 'Sci-Fi', likes: 0 })<br />
+###  7.showmostpopularmovie()
+Displays the top 3 most liked movies.
+
+
+###  8.addmovie(newMovie)
+Adds a new movie to the movies list.
+
+###  9.addexistingmovietolist(movieName)
+Adds an existing movie to the user's list by name.

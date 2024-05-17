@@ -16,14 +16,14 @@ console.log(movieModule.search('Sci-Fi')); //should see no resulys found
 console.log("===============");
 console.log("Function 2 - view movies in list");
 console.log("===============");
-console.log("\nView my list:");
-console.log(movieModule.viewmylist());
+console.log("View my list:");
+console.log(movieModule.viewmylist());//should be emty
 
 // Test likemovie function
 console.log("===============");
 console.log("Function 3 - view like a movie by name");
 console.log("===============");
-console.log("\nLike 'Kung Fu Panda':");
+console.log("Like 'Kung Fu Panda':");
 console.log(movieModule.likemovie('Kung Fu Panda'));
 console.log("Like 'Godzilla':");
 console.log(movieModule.likemovie('Godzilla'));
@@ -34,15 +34,14 @@ console.log(movieModule.likemovie('Unknown Movie'));
 console.log("===============");
 console.log("Function 4 - account details");
 console.log("===============");
-console.log("\nView account details:");
+console.log("View current account details:");
 console.log(movieModule.viewaccdetails());
 
 // Test editusername function
 console.log("===============");
 console.log("Function 5 - change username");
 console.log("===============");
-console.log("\nEdit username to 'NewUsername':");
-console.log(movieModule.editusername('NewUsername'));
+console.log(movieModule.editusername('Tommy123'));
 console.log("View account details:");
 console.log(movieModule.viewaccdetails());
 
@@ -50,7 +49,7 @@ console.log(movieModule.viewaccdetails());
 console.log("===============");
 console.log("Function 6- change name");
 console.log("===============");
-console.log(movieModule.editname('NewName'));
+console.log(movieModule.editname('Thomas'));
 console.log("View account details:");
 console.log(movieModule.viewaccdetails());
 
@@ -58,7 +57,7 @@ console.log(movieModule.viewaccdetails());
 console.log("===============");
 console.log("Function 7 - view most popular movie");
 console.log("===============");
-console.log("\nShow most popular movies:");
+console.log("Show most popular movies:");
 console.log(movieModule.showmostpopularmovie());
 
 // Test addmovie function
@@ -66,7 +65,30 @@ console.log("===============");
 console.log("Function 8 - add a movie");
 console.log("===============");
 const newMovie = { name: "New Movie", genre: 'Sci-Fi', likes: 0 };
-console.log("\nAdd new movie:");
+console.log("Add new movie:");
 console.log(movieModule.addmovie(newMovie));
 console.log("Search for 'New Movie':");
 console.log(movieModule.search('New Movie'));
+
+// Test addexistingmovietolist function
+// Test addmovie function
+console.log("===============");
+console.log("Function 9 - add a movie to list");
+console.log("===============");
+console.log("Add existing movie 'Godzilla' to my list:");//shall work as we are addimg a movie that exists and also a movie not in list
+console.log(movieModule.addexistingmovietolist('Godzilla'));
+console.log("===============");
+
+console.log("Add existing movie 'Kung Fu Panda' to list:");//shall work
+console.log(movieModule.addexistingmovietolist('Kung Fu Panda'));
+console.log("===============");
+
+console.log("Add existing movie 'Godzilla' that alr exixsts in list:");//displays that the movie is alr added
+console.log(movieModule.addexistingmovietolist('Godzilla'));
+console.log("===============");
+
+console.log("Try to add non-existing movie 'Avatar' to my list:");
+console.log(movieModule.addexistingmovietolist('Avatar')); //shall say movie not found as its not a movie that exists
+console.log("===============");
+console.log("View list to see last:"); //displays the list godzilla should be adddd also
+console.log(movieModule.viewmylist());

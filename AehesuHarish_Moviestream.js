@@ -24,7 +24,7 @@ module.exports = {
 
     // Search movie by name or genre
     search(query) {
-        // Filter the movies array for matches by name or genre
+        // Filter the movies for any matches by name or genre
         let results = movies.filter(movie => 
             movie.name.toLowerCase().includes(query.toLowerCase()) ||
             movie.genre.toLowerCase().includes(query.toLowerCase())
@@ -82,7 +82,7 @@ module.exports = {
 
     // Show most popular movie function
     showmostpopularmovie() {
-        // Sort movies by the number of likes in descending order
+        // Sort movies by the number of likes in order(top movie first)
         let sortedMovies = [...movies].sort((a, b) => b.likes - a.likes);  // [...movies] uses the spread operator to create a new array with the same elements (Googled it)
         // Get the top 3 movies
         let top3Movies = sortedMovies.slice(0, 3);

@@ -8,14 +8,14 @@ You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live 
 
 For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax -->
 
-##Overview
+## Overview
 This Node.js module provides functionalities for managing and interacting with a movie streaming service. You can search for movies by name or genre, view a list of your favorite movies, like movies, view and edit user account details, and add new movies to the list. This README will guide you through setting up and using the module.
 
 
-##Setting up
+## Setting up
 
-##Usage
-###This is the code to test out
+## Usage
+### This is the code to test out
 const movieModule = require('./AehesuHarish_Moviestream.js'); 
 
 
@@ -90,49 +90,49 @@ console.log(movieModule.search('New Movie'));
 
 
 
-##Functions
+## Functions
 
-###1. Search for Movies:
+### 1. Search for Movies:
 Function: search(query)
 Description: Searches for movies by name or genre.
 Parameters: query (string) - The search term.
 Example: movieModule.search('Comedy')
 
-###2. View My List:
+### 2. View My List:
 Function: viewmylist()
 Description: Returns the list of movies in the user's list.
 Example: movieModule.viewmylist()
 
-###3. Like a Movie:
+### 3. Like a Movie:
 Function: likemovie(movieName)
 Description: Increments the like count for the specified movie.
 Parameters: movieName (string) - The name of the movie to like.
 Example: movieModule.likemovie('Kung Fu Panda')
 
-###4. View Account Details:
+### 4. View Account Details:
 Function: viewaccdetails()
 Description: Returns the user's account details.
 Example: movieModule.viewaccdetails()
 
 
-###5. Edit username
+### 5. Edit username
 Function: editusername(newUsername)
 Description: Updates the username in the user's account details.
 Parameters: newUsername (string) - The new username.
 Example: movieModule.editusername('NewUsername')
 
-###6. Edit Name:
+### 6. Edit Name:
 Function: editname(newName)
 Description: Updates the name in the user's account details.
 Parameters: newName (string) - The new name.
 Example: movieModule.editname('NewName')
 
-###7. Show Most Popular Movies:
+### 7. Show Most Popular Movies:
 Function: showmostpopularmovie()
 Description: Returns the top 3 movies sorted by the number of likes.
 Example: movieModule.showmostpopularmovie()
 
-###8. Add Movie:
+### 8. Add Movie:
 Function: addmovie(newMovie)
 Description: Adds a new movie to the list of movies.
 Parameters: newMovie (object) - The new movie object with name, genre, and likes properties.
